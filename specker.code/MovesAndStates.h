@@ -7,7 +7,7 @@ using namespace std;
 
 class Move {
 public: // Take sc coins from heap sh and put tc coins to heap th.
- Move(int sh, int sc, int th, int tc);
+ Move(int sh, int sc, int th=0, int tc=0);
 
  int getSource() const;
  int getSourceCoins() const;
@@ -41,6 +41,6 @@ class State {
  friend ostream & operator << (ostream &out, const State &state);
 
  private :
-    int heapsCount, playersCount; 
+    int maxHeaps, maxPlayers, playing; 
     int *coins; // array of coins in every heap 
 };

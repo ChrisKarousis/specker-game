@@ -14,20 +14,39 @@ class Player {
  virtual Move play(const State &s) = 0;
 
  friend ostream & operator << (ostream &out, const Player &player);
+
+ private :
+    string name;
  };
 
- class Greedy : public Player {
-
+ class GreedyPlayer : public Player {
+ public :
+ GreedyPlayer(const string &n);
+ ~GreedyPlayer();
+ const string & getType() const;
+ Move play(const State &s);
 };
 
-class Spartan : public Player {
-
+class SpartanPlayer : public Player {
+ public :
+ SpartanPlayer(const string &n);
+ ~SpartanPlayer();
+ const string & getType() const;
+ Move play(const State &s);
 };
 
-class Sneaky : public Player {
-
+class SneakyPlayer : public Player {
+ public :
+ SneakyPlayer(const string &n);
+ ~SneakyPlayer();
+ const string & getType() const;
+ Move play(const State &s);
 };
 
-class Righteous : public Player {
-    
+class RighteousPlayer : public Player {
+ public :
+ RighteousPlayer(const string &n);
+ ~RighteousPlayer();
+ const string & getType() const;
+ Move play(const State &s);
 };

@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <stdexcept>
+#include <vector>
 #include "players.h"
 
 using namespace std;
@@ -16,4 +17,11 @@ class Game {
  void play(ostream &out) throw(logic_error);
  int getPlayers() const;
  const Player *getPlayer(int p) const throw(logic_error);
+
+ private :
+    int maxHeaps, maxPlayers;
+    int heapsCount, playersCount;
+    State* state;
+    int *c;
+    Player **pl;
 };
